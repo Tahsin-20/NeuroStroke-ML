@@ -9,9 +9,35 @@ Original file is located at
 
 import streamlit as st
 import pandas as pd
+import numpy as np
 import joblib
+from sklearn.base import BaseEstimator, TransformerMixin
 
-# Load saved pipeline
+
+class IQRCapper(BaseEstimator, TransformerMixin):
+
+    def fit(self, X, y=None):
+        X = np.asarray(X, dtype=float)
+
+        q1 = np.nanpercentile(X, 25, axis=0)
+        q3 = np.nanpercentile(X, 75, axis=0)
+
+        iqr = q3 - q1
+
+        self.lower = q1 - 1.5 * iqr
+        self.upper = q3 + 1.5 * iqr
+
+        return self
+
+    def transform(self, X):
+        X = np.asarray(X, dtype=float)
+
+        return np.clip(
+            X,
+            self.lower,
+            self.upper
+        )
+
 pipeline = joblib.load("models/stroke_pipeline.pkl")
 
 st.title("🧠 Stroke Prediction")
