@@ -2,7 +2,7 @@
 
 An end-to-end machine learning project that predicts stroke risk from demographic, lifestyle, and health data, with a focus on handling severe class imbalance responsibly and making the final model's predictions explainable rather than a black box.
 
-🔗 **Live app:** *[add your Streamlit URL here]*
+🔗 **Live app:** *https://stroke-made-me-broke-byth.streamlit.app/*
 
 ---
 
@@ -102,29 +102,31 @@ Misclassified patients are pulled out and inspected directly rather than left in
 
 The trained pipeline (`models/stroke_pipeline.pkl`) is served through a [Streamlit](https://streamlit.io/) app, where a user can enter a patient's details and get a live risk prediction.
 
-> ⚠️ *Add a short description here of what the app actually shows — e.g. whether it surfaces the SHAP explanation for that prediction, what inputs it takes, and a screenshot or GIF of the UI.*
+
+<img width="557" height="809" alt="Screenshot 2026-09-25 at 3 03 40 PM" src="https://github.com/user-attachments/assets/2b5b9029-7103-431a-a789-8e58a0ee1783" />
+
+
 
 ## Repository Structure
 
 ```
 .
-├── notebooks/
-│   └── Stroke_Prediction.ipynb      # Full analysis: EDA → modeling → SHAP
+├── Stroke_Prediction.ipynb      # Full analysis: EDA → modeling → SHAP
 ├── models/
 │   └── stroke_pipeline.pkl          # Saved final pipeline (preprocessing + model)
 ├── app.py                           # Streamlit app
 ├── requirements.txt
+├── .gitignore
+├── healthcare-dataset-stroke-data.csv
 └── README.md
 ```
-
-*(Adjust this section to match your actual file/folder names.)*
 
 ## Running Locally
 
 ```bash
 # 1. Clone the repo
-git clone <your-repo-url>
-cd <your-repo-name>
+git clone <https://github.com/Tahsin-20/NeuroStroke-ML>
+cd <NeuroStroke-ML>
 
 # 2. Install dependencies
 pip install -r requirements.txt
