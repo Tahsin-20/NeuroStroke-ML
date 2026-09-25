@@ -82,7 +82,7 @@ Models are compared via:
 - Precision-recall curves and ROC curves across all four models
 - A confusion matrix for the final model
 
-Full numeric results and plots are in the notebook — see `notebooks/` below.
+Full numeric results and plots are in the notebook — see `Stroke_Prediction.ipynb` below.
 
 ## Explainability (SHAP)
 
