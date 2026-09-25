@@ -45,9 +45,9 @@ st.write("Enter patient information to predict stroke risk.")
 
 age = st.number_input(
     "Age",
-    min_value=0.0,
-    max_value=100.0,
-    value=45.0
+    min_value=1,
+    max_value=100,
+    value=30
 )
 
 gender = st.selectbox(
